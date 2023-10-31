@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include your CSS and other header content here -->
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Enroll in Course</h2>
+
+            <!-- Display the custom QR code image -->
+            <img src="{{ url_for('static', filename=qr_code_image_path) }}" alt="QR Code" width="500" height="500">
+            
+            <p>Scan the QR code using the PhonePe app to complete your payment.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Display flash messages -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="flash-messages">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+<div class="card-footer">
+    <a href="{{ url_for('Index') }}" class="btn btn-secondary">Home</a>
+</div>
+</body>
+</html>

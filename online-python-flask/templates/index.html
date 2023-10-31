@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html long="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="Viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        
+        <title>Learning page</title>
+        <link rel="stylesheet" href="static/front.css"/>
+
+    </head>
+    <body> 
+            <div id="two">
+                <div id="three">
+                <h3 >LearningPlatform</h3>
+                </div>
+                <div id="four">
+                    <button id="signupBtn">Sign Up</button>
+                    <div id="registrationOptions" class="hidden">
+                        <a href="teacher_signup.html">
+                            <button id="teacherSignup">Register for Teacher</button>
+                        </a>
+                        <a href="student_signup.html">
+                        <button id="studentSignup">Register for Student</button>
+                        </a>
+                    </div>
+                    <button id="signinBtn">Sign In</button>
+                    <div id="registrationOptions1" class="hidden">
+                        <a href="/teacher_signin"> <!-- Add the correct route for teacher sign-in -->
+                            <button id="teacherSignin">Login for Teacher</button>
+                        </a>
+                        <a href="/student_signin"> <!-- Add the correct route for student sign-in -->
+                            <button id="studentSignin">Login for Student</button>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="one">
+        
+            <h2 id="five">boost your knowledge</h4>
+                <div id="six">
+            <h4> We are here to connect </h4>
+             <h4> different course to help </h4>  
+                <h4> people to learn anywhere </h4>
+                <h4> in the world</h4>
+                </div>
+            </div>
+            <script>
+                document.getElementById("signupBtn").addEventListener("click", function () {
+    var options = document.getElementById("registrationOptions");
+    if (options.style.display === "none" || options.style.display === "") {
+        options.style.display = "block";
+    } else {
+        options.style.display = "none";
+    }
+});
+            </script>
+            <script>
+                document.getElementById("signinBtn").addEventListener("click", function () {
+    var options = document.getElementById("registrationOptions1");
+    if (options.style.display === "none" || options.style.display === "") {
+        options.style.display = "block";
+    } else {
+        options.style.display = "none";
+    }
+});
+            </script>
+
+
+            </body>

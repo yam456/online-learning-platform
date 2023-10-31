@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+{% block title %} Explore Courses {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Explore Courses</h2>
+
+            <!-- Search Bar -->
+            <form method="GET" action="{{ url_for('explore_courses') }}">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search for courses" name="search_query">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- List of All Courses -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Teacher</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                        <tr>
+                            <td>{{ course.title }}</td>
+                            <td>{{ course.teacher.name }}</td>
+                            <td>${{ course.price }}</td>
+                            <td>
+                                <a href="{{ url_for('enroll_course', course_id=course.id) }}" class="btn btn-primary">Enroll</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="card-footer">
+    <a href="{{ url_for('Index') }}" class="btn btn-secondary">Home</a>
+</div>
+{% endblock %}
